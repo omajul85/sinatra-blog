@@ -2,7 +2,6 @@ require 'sinatra/base'
 require 'ostruct'
 require 'github_hook'
 require 'time'
-require 'slim'
 require 'yaml'
 
 class Blog < Sinatra::Base
@@ -20,7 +19,7 @@ class Blog < Sinatra::Base
     article.slug = File.basename(file, 'md')
 
     get "/#{article.slug}" do
-      slim :post, locals: { article: article }
+      slim :post, :locals => { :article => article }
     end
 
     articles << article
