@@ -3,4 +3,5 @@ article
     h1
       a [href=url(article.slug)] = article.title
     time [class="timeago" datetime=article.date.xmlschema] = article.date.strftime "%Y/%m/%d"
-  section.content = article.content
+  section.content
+    = article.content
