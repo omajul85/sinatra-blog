@@ -3,8 +3,10 @@ require 'ostruct'
 require 'github_hook'
 require 'time'
 require 'yaml'
+require_relative '../views/helpers/markdown_helpers.rb'
 
 class Blog < Sinatra::Base
+  include MarkdownHelper
   use GithubHook
 
   set :root, File.expand_path('../../', __FILE__)
