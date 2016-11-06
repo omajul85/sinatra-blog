@@ -4,4 +4,4 @@ article
       a [href=url(article.slug)] = article.title
     time [class="timeago" datetime=article.date.xmlschema] = article.date.strftime "%Y/%m/%d"
   section.content
-    = article.content
+    == markdown article.content
